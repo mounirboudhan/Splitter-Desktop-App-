@@ -1,3 +1,9 @@
+# -------------------------------------------------------------
+# Project Name : Splitter - Document into individually named PDF pages
+# Developed By : Mounir Boudhan
+# Description  : Convert Word doc into individual PDFs per page.
+# -------------------------------------------------------------
+
 import os
 import sys
 import ctypes
@@ -12,12 +18,6 @@ import random
 import string
 from PyPDF2 import PdfReader, PdfWriter
 from openpyxl import Workbook, load_workbook
-
-# -------------------------------------------------------------
-# Project Name : Splitter - Document into individually named PDF pages
-# Developed By : Mounir Boudhan
-# Description  : Convert Word doc into individual PDFs per page.
-# -------------------------------------------------------------
 
 # DPI Awareness for high resolution screens
 try:
@@ -36,7 +36,7 @@ class SplitterApp(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("Splitter - Document into individually named PDF pages")
+        self.title("Splitter - DOCX TO PDF")
         self.geometry("720x620")
         self.resizable(False, False)
 
@@ -45,7 +45,7 @@ class SplitterApp(ctk.CTk):
             base_path = sys._MEIPASS
         except Exception:
             base_path = os.path.dirname(os.path.abspath(__file__))
-        icon_path = os.path.join(base_path, "favicon.ico")
+        icon_path = os.path.join(base_path, "icon.ico")
         if os.path.exists(icon_path):
             self.iconbitmap(icon_path)
         
@@ -210,8 +210,8 @@ class SplitterApp(ctk.CTk):
 
         # Footer
         self.footer_label = ctk.CTkLabel(
-            self.container, text="v1.1.0 • Developed by Mounir Boudhan",
-            font=ctk.CTkFont(size=10), text_color=self.text_muted
+            self.container, text="v1.0.0 • Developed by Mounir Boudhan",
+            font=ctk.CTkFont(size=12), text_color=self.text_muted
         )
         self.footer_label.grid(row=4, column=0, pady=(0, 10))
 
